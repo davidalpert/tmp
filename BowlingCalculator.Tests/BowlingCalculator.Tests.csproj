@@ -67,8 +67,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateGame.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\StartGame.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StartGame.feature</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\CreateGameSteps.cs" />
+    <Compile Include="Steps\ReportingSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BowlingCalculator\BowlingCalculator.fsproj">
@@ -81,6 +87,10 @@
     <None Include="Features\CreateGame.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateGame.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\StartGame.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>StartGame.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
