@@ -76,7 +76,7 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Given("I create a game with 1 player", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Name"});
+                        "name"});
             table1.AddRow(new string[] {
                         "Mal"});
 #line 8
@@ -85,7 +85,7 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("I list the players", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Name"});
+                        "name"});
             table2.AddRow(new string[] {
                         "Mal"});
 #line 12
@@ -105,7 +105,7 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Given("I create a game with 3 players", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Name"});
+                        "name"});
             table3.AddRow(new string[] {
                         "Mal"});
             table3.AddRow(new string[] {
@@ -118,7 +118,7 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("I list the players", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
-                        "Name"});
+                        "name"});
             table4.AddRow(new string[] {
                         "Mal"});
             table4.AddRow(new string[] {

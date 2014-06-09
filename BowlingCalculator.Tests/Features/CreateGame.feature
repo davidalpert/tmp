@@ -6,23 +6,23 @@
 Scenario: Game with one player
 	Given I create a game with 1 player
 	And I add the following players to the game:
-		| Name |
+		| name |
 		| Mal  |
 	When I list the players
 	Then the list shall include the following players:
-		| Name |
+		| name |
 		| Mal  |
 
 Scenario: Game with three players
 	Given I create a game with 3 players
 	And I add the following players to the game:
-		| Name  |
+		| name  |
 		| Mal   |
 		| Inara |
 		| Wash  |
 	When I list the players
 	Then the list shall include the following players:
-		| Name  |
+		| name  |
 		| Mal   |
 		| Inara |
 		| Wash  |
