@@ -1,0 +1,16 @@
+GAC
+bin
+Bin
+obj
+*.user
+*.cache
+*.suo
+.project
+Index.dat
+Storage.dat
+TestResult.xml
+
+*.swp
+_ReSharper.*
+
+packages
