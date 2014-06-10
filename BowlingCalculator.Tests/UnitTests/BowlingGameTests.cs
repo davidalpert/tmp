@@ -17,7 +17,20 @@ namespace BowlingCalculator.Tests.UnitTests
 
             game.SetPlayerName(1, "Mal");
 
-            ObjectApprover.VerifyWithJson(game.ListPlayers());
+            ObjectApprover.VerifyWithJson(game.ListPlayerNames());
+        }
+
+        [Test]
+        public void Can_add_several_players()
+        {
+            var game = new BowlingGame(4);
+
+            game.SetPlayerName(1, "Mal");
+            game.SetPlayerName(2, "Inara");
+            game.SetPlayerName(3, "Wash");
+            game.SetPlayerName(4, "Zoe");
+
+            ObjectApprover.VerifyWithJson(game.ListPlayerNames());
         }
     }
 }

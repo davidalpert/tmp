@@ -52,7 +52,7 @@ namespace BowlingCalculator.Tests.Steps
         {
             var game = CurrentGame;
 
-            CurrentPlayerNames = game.ListPlayers();
+            CurrentPlayerNames = game.ListPlayerNames();
         }
 
         [When(@"I press start")]

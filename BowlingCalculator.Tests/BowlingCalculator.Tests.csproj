@@ -127,6 +127,9 @@
     <Content Include="UnitTests\BowlingGameTests.Can_add_players.approved.txt">
       <DependentUpon>BowlingGameTests.cs</DependentUpon>
     </Content>
+    <Content Include="UnitTests\BowlingGameTests.Can_add_several_players.approved.txt">
+      <DependentUpon>BowlingGameTests.cs</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

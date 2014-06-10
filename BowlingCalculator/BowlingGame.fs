@@ -5,7 +5,7 @@ type BowlingGame(numberOfPlayers:int) =
     let scores:int [] = Array.zeroCreate numberOfPlayers
     let mutable currentPlayerIndex = 0
 
-    member this.ListPlayers() =
+    member this.ListPlayerNames() =
         players
 
     member this.CurrentPlayer =
