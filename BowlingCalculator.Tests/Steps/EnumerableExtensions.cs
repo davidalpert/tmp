@@ -12,10 +12,10 @@ namespace BowlingCalculator.Tests.Steps
             items.ForEach((index, item) => actOn(item));
         }
 
-        internal static void ForEach<T>(this IEnumerable<T> items, Action<int,T> actOn)
+        internal static void ForEach<T>(this IEnumerable<T> items, Action<int, T> actOn, int indexOfFirstElement = 0)
         {
             if (actOn == null) return;
-            var index = 0;
+            var index = indexOfFirstElement;
             foreach (var item in items)
             {
                 actOn(index, item);

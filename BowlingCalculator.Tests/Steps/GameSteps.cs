@@ -44,9 +44,9 @@ namespace BowlingCalculator.Tests.Steps
         {
             var names = table.Rows.Select(r => r.Values.ElementAt(0).Trim());
             var game = CurrentGame;
-            names.ForEach(game.SetPlayerName);
+            names.ForEach(game.SetPlayerName,1);
         }
-        
+
         [When(@"I list the players")]
         public void WhenIListThePlayers()
         {
@@ -54,14 +54,31 @@ namespace BowlingCalculator.Tests.Steps
 
             CurrentPlayerNames = game.ListPlayers();
         }
-        
+
         [When(@"I press start")]
         public void WhenIPressStart()
         {
             var game = CurrentGame;
             game.StartGame();
         }
-        
+
+        [StepArgumentTransformation]
+        public int[][] TransformThrows(Table table)
+        {
+            return table.Rows.Select(r => r.ElementAt(0).Value
+                                                        .Split(',')
+                                                        .Select(Int32.Parse)
+                                                        .ToArray())
+                             .ToArray();
+        }
+
+        [When(@"I record the following results:")]
+        public void WhenIRecordTheFollowingThrows(int[][] throws)
+        {
+            var game = CurrentGame;
+            throws.SelectMany(x => x).ForEach(game.KnockDown);
+        }
+
         [Then(@"the players should have the following scores:")]
         public void ThenThePlayersShouldHaveTheFollowingScores(Table table)
         {

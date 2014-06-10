@@ -31,9 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ApprovalTests">
+      <HintPath>..\packages\ApprovalTests.3.0.5\lib\net40\ApprovalTests.dll</HintPath>
+    </Reference>
+    <Reference Include="ApprovalUtilities">
+      <HintPath>..\packages\ApprovalUtilities.3.0.5\lib\net35\ApprovalUtilities.dll</HintPath>
+    </Reference>
     <Reference Include="FSharp.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="MarkdownDeep">
-      <HintPath>..\packages\MarkdownDeep.NET.1.5\lib\.NetFramework 3.5\MarkdownDeep.dll</HintPath>
+    <Reference Include="MarkdownSharp">
+      <HintPath>..\packages\MarkdownSharp.1.13.0.0\lib\35\MarkdownSharp.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
@@ -41,14 +47,26 @@
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
     </Reference>
-    <Reference Include="SpecFlow.Reporting">
-      <HintPath>..\packages\SpecFlow.Reporting.0.4.6.5\lib\net40\SpecFlow.Reporting.dll</HintPath>
+    <Reference Include="ObjectApproval">
+      <HintPath>..\packages\ObjectApproval.0.2.0\Lib\NET40\ObjectApproval.dll</HintPath>
     </Reference>
-    <Reference Include="SpecFlow.Reporting.Json">
-      <HintPath>..\packages\SpecFlow.Reporting.Json.0.4.6.7\lib\net40\SpecFlow.Reporting.Json.dll</HintPath>
+    <Reference Include="SpecFlow.Reporting, Version=0.5.0.15, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SpecFlow.Reporting.0.5.0.15\lib\net40\SpecFlow.Reporting.dll</HintPath>
     </Reference>
-    <Reference Include="SpecFlow.Reporting.WebApp">
-      <HintPath>..\packages\SpecFlow.Reporting.WebApp.0.4.6.13\lib\net40\SpecFlow.Reporting.WebApp.dll</HintPath>
+    <Reference Include="SpecFlow.Reporting.Json, Version=0.5.0.13, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SpecFlow.Reporting.Json.0.5.0.13\lib\net40\SpecFlow.Reporting.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SpecFlow.Reporting.PlainText">
+      <HintPath>..\packages\SpecFlow.Reporting.PlainText.0.4.6.8\lib\net40\SpecFlow.Reporting.PlainText.dll</HintPath>
+    </Reference>
+    <Reference Include="SpecFlow.Reporting.WebApp, Version=0.5.0.24, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SpecFlow.Reporting.WebApp.0.5.0.24\lib\net40\SpecFlow.Reporting.WebApp.dll</HintPath>
+    </Reference>
+    <Reference Include="SpecFlow.Reporting.Xml">
+      <HintPath>..\packages\SpecFlow.Reporting.Xml.0.5.0.11\lib\net40\SpecFlow.Reporting.Xml.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -67,6 +85,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CreateGame.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\ScoreGame.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScoreGame.feature</DependentUpon>
+    </Compile>
     <Compile Include="Features\StartGame.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -76,6 +99,7 @@
     <Compile Include="Steps\GameSteps.cs" />
     <Compile Include="Steps\EnumerableExtensions.cs" />
     <Compile Include="Steps\ReportingSteps.cs" />
+    <Compile Include="UnitTests\BowlingGameTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BowlingCalculator\BowlingCalculator.fsproj">
@@ -89,13 +113,21 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CreateGame.feature.cs</LastGenOutput>
     </None>
+    <None Include="Features\ScoreGame.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ScoreGame.feature.cs</LastGenOutput>
+    </None>
     <None Include="Features\StartGame.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>StartGame.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="UnitTests\BowlingGameTests.Can_add_players.approved.txt">
+      <DependentUpon>BowlingGameTests.cs</DependentUpon>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
