@@ -130,6 +130,18 @@
     <Content Include="UnitTests\BowlingGameTests.Can_add_several_players.approved.txt">
       <DependentUpon>BowlingGameTests.cs</DependentUpon>
     </Content>
+    <Content Include="UnitTests\BowlingGameTests.Can_score_one_player.approved.txt">
+      <DependentUpon>BowlingGameTests.cs</DependentUpon>
+    </Content>
+    <Content Include="UnitTests\BowlingGameTests.Can_score_one_player_ball_0.approved.txt">
+      <DependentUpon>BowlingGameTests.cs</DependentUpon>
+    </Content>
+    <Content Include="UnitTests\BowlingGameTests.Can_score_one_player_ball_1.approved.txt">
+      <DependentUpon>BowlingGameTests.cs</DependentUpon>
+    </Content>
+    <Content Include="UnitTests\BowlingGameTests.Can_score_one_player_ball_2.approved.txt">
+      <DependentUpon>BowlingGameTests.cs</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

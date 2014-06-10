@@ -1,0 +1,5 @@
+﻿{
+    "CurrentPlayer": "Mal",
+    "CurrentFrame": 1,
+    "CurrentBall": 1
+}

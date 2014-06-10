@@ -32,5 +32,38 @@ namespace BowlingCalculator.Tests.UnitTests
 
             ObjectApprover.VerifyWithJson(game.ListPlayerNames());
         }
+
+        [Test]
+        public void Can_score_one_player_ball_0()
+        {
+            var game = new BowlingGame(1);
+
+            game.SetPlayerName(1, "Mal");
+            game.StartGame();
+            ObjectApprover.VerifyWithJson(game);
+        }
+
+        [Test]
+        public void Can_score_one_player_ball_1()
+        {
+            var game = new BowlingGame(1);
+
+            game.SetPlayerName(1, "Mal");
+            game.StartGame();
+            game.KnockDown(1);
+            ObjectApprover.VerifyWithJson(game);
+        }
+
+        [Test]
+        public void Can_score_one_player_ball_2()
+        {
+            var game = new BowlingGame(1);
+
+            game.SetPlayerName(1, "Mal");
+            game.StartGame();
+            game.KnockDown(1);
+            game.KnockDown(1);
+            ObjectApprover.VerifyWithJson(game);
+        }
     }
 }

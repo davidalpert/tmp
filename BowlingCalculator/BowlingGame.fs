@@ -4,6 +4,8 @@ type BowlingGame(numberOfPlayers:int) =
     let players:string [] = Array.zeroCreate numberOfPlayers
     let scores:int [] = Array.zeroCreate numberOfPlayers
     let mutable currentPlayerIndex = 0
+    let mutable currentBall = 1
+    let mutable currentFrame = 1
 
     member this.ListPlayerNames() =
         players
@@ -12,14 +14,20 @@ type BowlingGame(numberOfPlayers:int) =
         players.GetValue(currentPlayerIndex)
 
     member this.CurrentFrame =
-        1
+        currentFrame
 
     member this.CurrentBall =
-        1
+        currentBall
 
     member this.KnockDown(numberOfPins:int) =
         let oldScore = scores.[currentPlayerIndex]
         scores.SetValue(oldScore + numberOfPins, currentPlayerIndex)
+        currentFrame <- match currentBall with
+                        | 2 -> currentFrame + 1
+                        | 1 -> currentFrame
+        currentBall <- match currentBall with
+                        | 2 -> 1 
+                        | 1 -> currentBall + 1
         ()
 
     member this.SetPlayerName(index:int,name:string) =
